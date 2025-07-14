@@ -17,8 +17,30 @@ async function loadHeader() {
     }
 }
 
-// Load header when DOM is ready
-document.addEventListener('DOMContentLoaded', loadHeader);
+// Footer component loader
+async function loadFooter() {
+    try {
+        const response = await fetch('./components/footer.html');
+        const footerHTML = await response.text();
+        const footerContainer = document.getElementById('footer-container');
+        if (footerContainer) {
+            footerContainer.innerHTML = footerHTML;
+        }
+    } catch (error) {
+        console.error('Error loading footer:', error);
+        // Fallback footer if component fails to load
+        const footerContainer = document.getElementById('footer-container');
+        if (footerContainer) {
+            footerContainer.innerHTML = '<footer class="text-center bg-gray-800 text-white fixed bottom-0 w-full h-24"></footer>';
+        }
+    }
+}
+
+// Load components when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    loadHeader();
+    loadFooter();
+});
 
 document.getElementById('alertButton')?.addEventListener('click', function() {
     alert('Button clicked!');
