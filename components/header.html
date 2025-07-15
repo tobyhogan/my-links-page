@@ -2,15 +2,28 @@
 
 
 <header class="bg-gray-800 text-white py-5 px-6">
-
     <div class="flex justify-between items-center">
+        <a href="/my-links-page/index.html" class="text-2xl font-bold">My Links Page</a>
 
-        <a href="/my-links-page/index.html" class="text-3xl font-bold ml-[4vw]">My Links Page</a>
-
-
-        <nav class="space-x-4 mr-[12vw]">
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-4">
             <a href="/my-links-page/index.html" class="text-blue-300 hover:text-blue-100 transition-colors">Main Links Page</a>
             <a href="/my-links-page/other.html" class="text-blue-300 hover:text-blue-100 transition-colors">Links Page 2</a>
         </nav>
+
+        <!-- Mobile Burger Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none">
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="burger-line-1"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="burger-line-2"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="burger-line-3"></span>
+        </button>
     </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-600">
+        <div class="flex flex-col space-y-3 pt-4">
+            <a href="/my-links-page/index.html" class="text-blue-300 hover:text-blue-100 transition-colors text-lg">Main Links Page</a>
+            <a href="/my-links-page/other.html" class="text-blue-300 hover:text-blue-100 transition-colors text-lg">Links Page 2</a>
+        </div>
+    </nav>
 </header>
